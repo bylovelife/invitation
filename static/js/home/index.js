@@ -74,7 +74,6 @@ require(['../require-config'], function () {
                 // slidesNavPosition:bottom,//横向幻灯片导航位置
                 scrollOverflow: true, //内容超过慢跑后是否显示滚动条，true--jquery.slimscroll插件
                 afterRender: function afterRender() {
-                    console.log('加载完成！');
                     $('#loading_mask').hide();
                 },
                 onLeave: function onLeave(index, nextIndex, direction) {
@@ -189,7 +188,6 @@ require(['../require-config'], function () {
                     // }
                 },
                 afterLoad: function afterLoad(anchorLink, index) {
-                    console.log("afterLoad--" + "anchorLink: " + anchorLink + " index: " + index);
                     if (index == 1) {
                         //顶部花加载
                         $('.js_page_top').find('img').show().addClass('dong');
@@ -319,22 +317,7 @@ require(['../require-config'], function () {
                         }, 1000);
                         //底部花加载
                         $('.js_page9_b').find('img').show().addClass('dong');
-                    } 
-                    // else if (index == 10) {
-                    //     //顶部花加载  
-                    //     $('.js_page10_l').show().addClass('dong');
-                    //     $('.js_page10_r').show().addClass('dong');
-                    //     //文字
-                    //     $('.js_page10_title').find('span').css({ 'display': 'block' }).addClass('dong');
-                    //     $('.js_page10_body').show().addClass('dong');
-                    //     setTimeout(function () {
-                    //         $('.js_page10_body').find('.page9_b_t').show().addClass('dong');
-                    //         $('.js_page10_body').find('dl').show().addClass('dong');
-                    //         $('.js_page10_body').find('.cage').show().addClass('dong');
-                    //     }, 1000);
-                    //     //底部花加载
-                    //     $('.js_page10_b').find('img').show().addClass('dong');
-                    // }
+                    }
                 }
             });
         });
