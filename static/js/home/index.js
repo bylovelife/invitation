@@ -49,7 +49,26 @@ require(['../require-config'], function () {
                 myVideo.play();
             }
         });
+        // document.addEventListener('touchstart', function(){
+        //     if (audio.paused) {
+        //         console.log("音频当前处于暂停状态");
+        //       } else {
+        //         console.log("音频正在播放");
+        //       }
+        //     document.getElementById("media").play();
+        // })
         $(document).ready(function () {
+            // setTimeout(() => {
+            //     document.getElementById("media").play();
+            // }, 10000);
+            var promise = document.getElementById("media").play();
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    // Autoplay started! 这种情况可以自动播放（非谷歌的其他浏览器：edge、360）
+                }).catch(error => {
+                    //  Autoplay was prevented.谷歌和火狐就会阻止播放，可以显示一个PLAY按钮提示用户点击后进行播放
+                });
+            }
             $('#fullpage').fullpage({
                 //sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
                 anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage', '7thpage', '8thpage', '9thpage', 'tenthpage', 'eleventhpage'],
@@ -77,7 +96,6 @@ require(['../require-config'], function () {
                     $('#loading_mask').hide();
                 },
                 onLeave: function onLeave(index, nextIndex, direction) {
-                    console.log("onLeave--" + "index: " + index + " nextIndex: " + nextIndex + " direction: " + direction);
                     if (index == 1) {
                         //顶部花加载
                         $('.js_page_top').find('img').hide().removeClass('dong');
