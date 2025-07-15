@@ -49,24 +49,16 @@ require(['../require-config'], function () {
                 myVideo.play();
             }
         });
-        // document.addEventListener('touchstart', function(){
-        //     if (audio.paused) {
-        //         console.log("音频当前处于暂停状态");
-        //       } else {
-        //         console.log("音频正在播放");
-        //       }
-        //     document.getElementById("media").play();
-        // })
         $(document).ready(function () {
-            // setTimeout(() => {
-            //     document.getElementById("media").play();
-            // }, 10000);
             var promise = document.getElementById("media").play();
             if (promise !== undefined) {
                 promise.then(_ => {
                     // Autoplay started! 这种情况可以自动播放（非谷歌的其他浏览器：edge、360）
                 }).catch(error => {
                     //  Autoplay was prevented.谷歌和火狐就会阻止播放，可以显示一个PLAY按钮提示用户点击后进行播放
+                    document.addEventListener('touchstart', function(){
+                        document.getElementById("media").play();
+                    })
                 });
             }
             $('#fullpage').fullpage({
