@@ -2374,7 +2374,8 @@ html.fp-enabled,
 #section6 .page6_body .page6_word p {
   text-align: center;
   display: none;
-  color: #151313;
+  font-size: 14px;
+  /* color: #151313; */
 }
 
 #section6 .page6_body .page6_word p.dong {
@@ -2672,8 +2673,8 @@ html.fp-enabled,
   width: 3.733333rem;
   height: auto;
   position: absolute;
-  bottom: 0.426667rem;
-  left: 0.8rem;
+  top: 0.1rem;
+  right: 0.1rem;
 }
 
 #section7 .page7_b img.img4 {
@@ -3098,6 +3099,7 @@ html.fp-enabled,
 }
 
 #section9 .page9_body dl dd {
+  margin-bottom: 0.426667rem;
   border-top: 0.026667rem dashed #efbed4;
   border-bottom: 0.026667rem dashed #efbed4;
 }
